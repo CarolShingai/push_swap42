@@ -6,7 +6,7 @@
 #    By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/07 14:43:10 by cshingai          #+#    #+#              #
-#    Updated: 2024/06/10 20:47:28 by cshingai         ###   ########.fr        #
+#    Updated: 2024/06/10 21:01:35 by cshingai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ OBJ = $(SRCS:srcs/%.c=obj/%.o)
 all: $(NAME)
 
 $(NAME): libft ft_printf ${OBJ}
-			cc $(FLAGS) $(OBJ) $(LIBS) -o $(NAME)
+			cc $(FLAGS) $(OBJ) $(LIBS) -o $@
 			@echo "compiling $(NAME)"
 
 # building libraries
@@ -38,7 +38,7 @@ ft_printf:
 			@make -C $(FT_PRINTF) all
 
 # compiling objects files
-obj/%.o: srcs/%.c ./includes/push_swap.h
+obj/%.o: srcs/%.c ./includes/push_swap.h | obj
 			mkdir -p obj
 			@cc $(FLAGS) $(HEADERS) -c $< -o $@
 			@echo "compiling objects"
