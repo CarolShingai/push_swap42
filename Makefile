@@ -6,7 +6,7 @@
 #    By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/07 14:43:10 by cshingai          #+#    #+#              #
-#    Updated: 2024/06/18 17:44:30 by cshingai         ###   ########.fr        #
+#    Updated: 2024/06/19 18:24:04 by cshingai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ HEADERS = -I $(LIBFT)
 # source files
 SRCS = ${addprefix srcs/, \
 			main.c \
-			error.c \
+			utils.c \
+			validation.c \
 		}
 
 OBJ = $(SRCS:srcs/%.c=obj/%.o)
