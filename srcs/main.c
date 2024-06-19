@@ -1,74 +1,70 @@
 #include "../include/push_swap.h"
-#include <limits.h>
 
-void	ft_error(char *msg)
+int	check_args_num(char *str)
 {
-	ft_printf("%s", msg);
-	exit(0);
-}
+	int	idx;
 
-
-void	check_argcs_int(char *nbr)
-{
-	int idx = 0;
-	while(nbr[idx])
+	idx = 0;
+	if (str[idx] == '-' || str[idx] == '+')
+		idx++;
+	while (str[idx])
 	{
-		if (!ft_isdigit(nbr[idx]))
-			ft_error(NOT_INT);
+		if (!ft_isdigit(str[idx]))
+			return(0);
 		idx++;
 	}
+	return(1);
 }
 
-void	check_args_doubles(char *nbr, char **nbr_all, int idx)
+int	check_max_value(char *str)
 {
-	int	idx2;
+	long	number;
 
-		idx2 = idx + 1;
-	while(nbr_all[idx2])
-	{
-		ft_printf("entrou\n");
-		ft_printf("%s\n", &nbr);
-		if (nbr == nbr_all[idx2])
-			ft_error(DOBLES);
-		idx2++;
-	}
+	number = ft_atoi(str);
+	if (number > INT_MAX)
+		return (0);
+	return(1);
 }
 
+int	check_doubles(long nbr, char *str, int idx)
+{
+	idx++;
+	while(str[idx])
+	{
+		if (nbr == ft_atoi(&str[idx]))
+		{
+			ft_printf("%d", nbr);
+			ft_printf("%d\n", ft_atoi(&str[idx]));
+			return(0);
+		}
+		idx++;
+	}
+	return(1);
+}
+//alterar msg de erro
 void	check_args(char **argv)
 {
-	int idx;
-	// int j;
+	int		idx;
+	long	tmp_nbr;
 
 	idx = 1;
 	while (argv[idx])
 	{
-		check_argcs_int(argv[idx]);
-		check_args_doubles(&argv[idx], &argv, idx);
+		tmp_nbr = ft_atoi(argv[idx]);
+		if (check_args_num(argv[idx]) == 0)
+			ft_error(NOT_INT);
+		if (check_max_value(argv[idx]) == 0)
+			ft_error(BIGGER_INT_MAX);
+		if (check_doubles(tmp_nbr, argv[1], idx) == 0)
+			ft_error(DOBLES);
 		idx++;
 	}
-	// j = 0;
 }
-
-// void	check_number(char **argv)
-// {
-// 	int idx;
-// 	int number;
-
-// 	idx = 0;
-// 	while (argv[idx])
-// 	{
-// 		number = ft_atoi(argv[idx]);
-// 		if (number == INT_MAX)
-// 			ft_error(BIG_MAX);
-// 	}
-// }
-
 
 int	main(int argc, char **argv)
 {
 	if (argc < 2)
 		ft_error(ZERO_ARGS);
 	check_args(argv);
-	// check_number(argv);
 	return(0);
 }

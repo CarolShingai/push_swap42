@@ -6,12 +6,12 @@
 #    By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/07 14:43:10 by cshingai          #+#    #+#              #
-#    Updated: 2024/06/11 19:03:56 by cshingai         ###   ########.fr        #
+#    Updated: 2024/06/18 17:44:30 by cshingai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g3
 LIBFT = lib/libft
 FT_PRINTF = lib/ft_printf
 LIBS = $(LIBFT)/libft.a $(FT_PRINTF)/libftprintf.a
@@ -20,6 +20,7 @@ HEADERS = -I $(LIBFT)
 # source files
 SRCS = ${addprefix srcs/, \
 			main.c \
+			error.c \
 		}
 
 OBJ = $(SRCS:srcs/%.c=obj/%.o)
