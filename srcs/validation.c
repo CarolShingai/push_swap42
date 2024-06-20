@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validation.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 17:38:13 by cshingai          #+#    #+#             */
-/*   Updated: 2024/06/19 18:32:18 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/06/20 15:31:58 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,11 @@ int	check_doubles(long nbr, char **str, int idx)
 void	check_args(int argc, char **argv)
 {
 	int		idx;
-	char	**args;
 	long	tmp_nbr;
 
 	idx = 1;
+	if (argc < 2)
+		ft_error(NO_ARGS);
 	while (argv[idx])
 	{
 		tmp_nbr = ft_atoi(argv[idx]);
