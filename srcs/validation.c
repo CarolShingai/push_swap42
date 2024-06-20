@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validation.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
+/*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 17:38:13 by cshingai          #+#    #+#             */
-/*   Updated: 2024/06/20 15:31:58 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/06/20 19:53:05 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ int	check_args_num(char *str)
 	return(1);
 }
 
-int	check_max_value(char *str)
+int	check_max_min_value(char *str)
 {
 	long	number;
 
 	number = ft_atoi(str);
-	if (number > INT_MAX)
+	if (number > INT_MAX || number < INT_MIN)
 		return (0);
 	return(1);
 }
