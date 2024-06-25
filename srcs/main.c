@@ -1,13 +1,24 @@
 #include "../include/push_swap.h"
 
+void apagar_printlist(t_list *node)
+{
+	while(node)
+	{
+		ft_printf("Minha lista: %d\n", node->value);
+		node = node->next;
+	}
+}
+
+
 int	main(int argc, char **argv)
 {
-	t_list **stack_a;
-
+	t_list *stack_a;
+	t_list *stack_b;
+	
 	stack_a = NULL;
-	check_args(argc, argv);
-	add_node(stack_a, ft_atoi(argv[1]));
+	stack_b = NULL;
+	init_stack(&stack_a, argc, argv);
 	// list = (t_list)swap(argv);
-	// ft_printf("%s", argv[2]);
-	return(0);
+	apagar_printlist(stack_a);
+	return (0);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+         #
+#    By: cshingai <cshingai>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/07 14:43:10 by cshingai          #+#    #+#              #
-#    Updated: 2024/06/20 20:11:16 by cshingai         ###   ########.fr        #
+#    Updated: 2024/06/24 00:08:52 by cshingai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRCS = ${addprefix srcs/, \
 			utils.c \
 			validation.c \
 			swap_a.c \
-			stack_utils. \
+			stack_utils.c \
 		}
 
 OBJ = $(SRCS:srcs/%.c=obj/%.o)
