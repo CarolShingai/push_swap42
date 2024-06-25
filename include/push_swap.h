@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
+/*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 14:43:03 by cshingai          #+#    #+#             */
-/*   Updated: 2024/06/24 22:40:46 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/06/25 16:41:55 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,9 @@ t_bool	check_args(int argc, char **argv);
 
 //swap.c
 void	swap(t_list **list);
+void	sa(t_list *stack_a);
+void	sb(t_list *stack_b);
+void	ss(t_list *stack_a, t_list *stack_b);
 
 // stack_utils.c
 void	init_stack(t_list **stack, int argc, char **argv);

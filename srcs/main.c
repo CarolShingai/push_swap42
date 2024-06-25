@@ -14,10 +14,11 @@ int	main(int argc, char **argv)
 {
 	t_list *stack_a;
 	t_list *stack_b;
-	
+
 	stack_a = NULL;
 	stack_b = NULL;
 	init_stack(&stack_a, argc, argv);
+	swap(&stack_a);
 	// list = (t_list)swap(argv);
 	apagar_printlist(stack_a);
 	return (0);

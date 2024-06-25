@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cshingai <cshingai>                        +#+  +:+       +#+         #
+#    By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/07 14:43:10 by cshingai          #+#    #+#              #
-#    Updated: 2024/06/24 00:08:52 by cshingai         ###   ########.fr        #
+#    Updated: 2024/06/25 16:31:46 by cshingai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRCS = ${addprefix srcs/, \
 			main.c \
 			utils.c \
 			validation.c \
-			swap_a.c \
+			swap.c \
 			stack_utils.c \
 		}
 
