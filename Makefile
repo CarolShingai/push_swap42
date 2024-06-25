@@ -6,7 +6,7 @@
 #    By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/07 14:43:10 by cshingai          #+#    #+#              #
-#    Updated: 2024/06/25 16:31:46 by cshingai         ###   ########.fr        #
+#    Updated: 2024/06/25 16:56:51 by cshingai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRCS = ${addprefix srcs/, \
 			validation.c \
 			swap.c \
 			stack_utils.c \
+			push.c \
 		}
 
 OBJ = $(SRCS:srcs/%.c=obj/%.o)

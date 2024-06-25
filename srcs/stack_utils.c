@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
+/*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 19:58:10 by cshingai          #+#    #+#             */
-/*   Updated: 2024/06/24 23:20:17 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/06/25 18:49:17 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,8 @@ void	add_node(t_list **stack, int nbr)
 {
 	t_list	*node;
 	t_list	*aux;
-	
+
 	node = malloc(sizeof (t_list));
-	node->size = 0;
 	if (!node)
 		return ;
 	node->value = nbr;

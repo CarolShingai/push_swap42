@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 14:43:03 by cshingai          #+#    #+#             */
-/*   Updated: 2024/06/25 16:41:55 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/06/25 18:27:30 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,11 @@ void	swap(t_list **list);
 void	sa(t_list *stack_a);
 void	sb(t_list *stack_b);
 void	ss(t_list *stack_a, t_list *stack_b);
+
+// push.c
+void	push(t_list **dest, t_list **src);
+void	pa(t_list *stack_a, t_list *stack_b);
+void	pb(t_list *stack_a, t_list *stack_b);
 
 // stack_utils.c
 void	init_stack(t_list **stack, int argc, char **argv);
