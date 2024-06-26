@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
+/*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 16:49:38 by cshingai          #+#    #+#             */
-/*   Updated: 2024/06/26 14:27:39 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/06/26 19:36:40 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,6 @@ void	push(t_list **dest, t_list **src)
 	t_list	*new_node;
 
 	if (*src == NULL)
-		return ;
-	new_node = malloc (sizeof (t_list));
-	if (!new_node)
 		return ;
 	new_node = *src;
 	*src = (*src)->next;
@@ -39,14 +36,14 @@ void	push(t_list **dest, t_list **src)
 	*dest = new_node;
 }
 
-void	pa(t_list *stack_a, t_list *stack_b)
+void	pa(t_list **dest, t_list **src)
 {
-	push(&stack_a, &stack_b);
+	push(dest, src);
 	ft_printf("pa\n");
 }
 
-void	pb(t_list *stack_a, t_list *stack_b)
+void	pb(t_list **dest, t_list **src)
 {
-	push(&stack_b, &stack_a);
+	push(src, dest);
 	ft_printf("pb\n");
 }
