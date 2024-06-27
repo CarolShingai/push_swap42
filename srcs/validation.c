@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validation.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
+/*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 17:38:13 by cshingai          #+#    #+#             */
-/*   Updated: 2024/06/24 12:50:22 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/06/27 17:10:40 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ int	check_args_num(char *str)
 	while (str[idx])
 	{
 		if (!ft_isdigit(str[idx]))
-			return(0);
+			return (0);
 		idx++;
 	}
-	return(1);
+	return (1);
 }
 
 int	check_max_min_value(char *str)
@@ -35,19 +35,19 @@ int	check_max_min_value(char *str)
 	number = ft_atoi(str);
 	if (number > INT_MAX || number < INT_MIN)
 		return (0);
-	return(1);
+	return (1);
 }
 
 int	check_doubles(long nbr, char **str, int idx)
 {
 	idx++;
-	while(str[idx])
+	while (str[idx])
 	{
 		// ft_printf("1nbr:%d str[%d]:%d\n", nbr, idx, ft_atoi(str[idx]));
 		if (nbr == ft_atoi(str[idx]))
 		{
 			// ft_printf("2nbr:%d str[%d]:%d\n", nbr, idx, ft_atoi(str[idx]));
-			return(0);
+			return (0);
 		}
 		idx++;
 	}

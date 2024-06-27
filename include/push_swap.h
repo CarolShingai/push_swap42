@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
+/*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 14:43:03 by cshingai          #+#    #+#             */
-/*   Updated: 2024/06/26 22:56:54 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/06/27 17:38:32 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,16 @@
 typedef struct s_list
 {
 	int				value;
-    int             size;
+	int				size;
 	struct s_list	*next;
-    struct s_list   *prev;
+	struct s_list	*prev;
 }					t_list;
 
 typedef enum e_bool
 {
-    TRUE = 1,
-    FALSE = 0
-}   t_bool;
+	TRUE = 1,
+	FALSE = 0
+}	t_bool;
 
 // utils.c
 void	ft_error(char *msg);
@@ -59,6 +59,12 @@ void	rotate(t_list **stack);
 void	ra(t_list **stack_a);
 void	rb(t_list **stack_b);
 void	rr(t_list **stack_a, t_list **stack_b);
+
+// reverse_rotate.c
+void	reverse_rotate(t_list **stack);
+void	rra(t_list **stack_a);
+void	rrb(t_list **stack_b);
+void	rrr(t_list **stack_a, t_list **stack_b);
 
 // stack_utils.c
 void	init_stack(t_list **stack, int argc, char **argv);

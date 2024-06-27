@@ -6,12 +6,11 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 19:58:10 by cshingai          #+#    #+#             */
-/*   Updated: 2024/06/25 18:49:17 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/06/27 17:04:58 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
 
 void	init_stack(t_list **stack, int argc, char **argv)
 {
