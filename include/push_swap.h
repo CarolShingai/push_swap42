@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 14:43:03 by cshingai          #+#    #+#             */
-/*   Updated: 2024/06/26 19:35:47 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/06/26 22:56:54 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,6 @@
 
 # define ERROR "Error\n"
 # define NO_ARGS ""
-
-// typedef struct s_elements
-// {
-//     int     size;
-// }   t_elements;
 
 typedef struct s_list
 {
@@ -58,6 +53,12 @@ void	ss(t_list *stack_a, t_list *stack_b);
 void	push(t_list **dest, t_list **src);
 void	pa(t_list **dest, t_list **src);
 void	pb(t_list **dest, t_list **src);
+
+// rotate.c
+void	rotate(t_list **stack);
+void	ra(t_list **stack_a);
+void	rb(t_list **stack_b);
+void	rr(t_list **stack_a, t_list **stack_b);
 
 // stack_utils.c
 void	init_stack(t_list **stack, int argc, char **argv);

@@ -18,10 +18,7 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	init_stack(&stack_a, argc, argv);
-	pb(&stack_a, &stack_b);
-	pb(&stack_a, &stack_b);
-	pb(&stack_a, &stack_b);
-	pa(&stack_a, &stack_b);
+	ra(&stack_a);
 	apagar_printlist(stack_a,'a');
 	apagar_printlist(stack_b, 'b');
 	return (0);
