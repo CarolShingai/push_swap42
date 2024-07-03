@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 19:42:54 by cshingai          #+#    #+#             */
-/*   Updated: 2024/06/27 17:41:22 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/06/28 14:23:04 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	rotate(t_list **stack)
 		return ;
 	old_head = *stack;
 	*stack = (*stack)->next;
-	old_head->next = NULL;
 	aux = *stack;
 	if (aux)
 		aux->prev = NULL;
@@ -29,6 +28,7 @@ void	rotate(t_list **stack)
 		(aux) = aux->next;
 	aux->next = old_head;
 	old_head->prev = aux->next;
+	old_head->next = NULL;
 }
 
 void	ra(t_list **stack_a)

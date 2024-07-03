@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 14:43:03 by cshingai          #+#    #+#             */
-/*   Updated: 2024/06/27 17:38:32 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/02 20:51:53 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ typedef struct s_list
 {
 	int				value;
 	int				size;
+	struct s_list	*biggest;
+	struct s_list	*smallest;
 	struct s_list	*next;
 	struct s_list	*prev;
 }					t_list;
@@ -69,5 +71,7 @@ void	rrr(t_list **stack_a, t_list **stack_b);
 // stack_utils.c
 void	init_stack(t_list **stack, int argc, char **argv);
 void	add_node(t_list **stack, int nbr);
+void	find_smallest_node(t_list **stack);
+void	find_biggest_node(t_list **stack);
 
 #endif

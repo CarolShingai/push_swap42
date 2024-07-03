@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 19:58:10 by cshingai          #+#    #+#             */
-/*   Updated: 2024/06/27 17:04:58 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/02 21:00:30 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	init_stack(t_list **stack, int argc, char **argv)
 		while (++idx < argc)
 			add_node(stack, ft_atoi(argv[idx]));
 	}
+	find_smallest_node(stack);
+	find_biggest_node(stack);
 }
 
 void	add_node(t_list **stack, int nbr)
@@ -49,4 +51,36 @@ void	add_node(t_list **stack, int nbr)
 	}
 	(*stack)->size += 1;
 	ft_printf("size:%d\n", (*stack)->size);
+}
+
+void	find_smallest_node(t_list **stack)
+{
+	t_list	*temp;
+
+	if (*stack == NULL && (*stack)->next == NULL)
+		return ;
+	(*stack)->smallest = *stack;
+	temp = (*stack)->next;
+	while(temp)
+	{
+		if((*stack)->smallest->value < temp->value)
+			(*stack)->smallest = temp;
+		temp = temp->next;
+	}
+}
+
+void	find_biggest_node(t_list **stack)
+{
+	t_list	*temp;
+
+	if (*stack == NULL && (*stack)->next == NULL)
+		return ;
+	(*stack)->biggest = *stack;
+	temp = (*stack)->next;
+	while(temp)
+	{
+		if((*stack)->biggest->value > temp->value)
+			(*stack)->biggest = temp;
+		temp = temp->next;
+	}
 }
