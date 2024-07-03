@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 15:43:45 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/02 21:05:24 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/02 21:14:00 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ void	sort_three(t_list **stack)
 		return ;
 	while (*stack)
 	{
-		
+		if (*stack == (*stack)->biggest)
+		{
+			if((*stack)->next == (*stack)->smallest)
+				swap(stack);
+		}
 	}
 }
