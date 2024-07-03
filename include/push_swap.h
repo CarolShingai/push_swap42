@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 14:43:03 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/02 20:51:53 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/03 19:32:48 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,9 @@ void	init_stack(t_list **stack, int argc, char **argv);
 void	add_node(t_list **stack, int nbr);
 void	find_smallest_node(t_list **stack);
 void	find_biggest_node(t_list **stack);
+
+//sort.c
+t_bool	is_ordened(t_list *stack_a);
+void	sort_three(t_list **stack);
 
 #endif

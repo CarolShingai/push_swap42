@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 17:05:35 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/02 17:49:20 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/03 19:34:49 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	init_stack(&stack_a, argc, argv);
-	ft_printf("maior:%d\n", stack_a->smallest);
-	rra(&stack_a);
+	if (is_ordened(stack_a) == FALSE)
+		sort_three(&stack_a);
 	apagar_printlist(stack_a, 'a');
-	apagar_printlist(stack_b, 'b');
+	// apagar_printlist(stack_b, 'b');
 	return (0);
 }
