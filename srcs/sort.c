@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 15:43:45 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/03 19:35:39 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/04 21:05:54 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	sort_three(t_list **stack)
 	else if ((*stack)->next->value == (*stack)->biggest->value)
 		rra(stack);
 	if ((*stack)->value > (*stack)->next->value)
-		sa(*stack);
+		sa(stack);
 }
 
 t_bool	is_ordened(t_list *stack)

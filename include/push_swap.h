@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 14:43:03 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/03 19:32:48 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/04 21:05:33 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ t_bool	check_args(int argc, char **argv);
 
 //swap.c
 void	swap(t_list **list);
-void	sa(t_list *stack_a);
-void	sb(t_list *stack_b);
-void	ss(t_list *stack_a, t_list *stack_b);
+void	sa(t_list **stack_a);
+void	sb(t_list **stack_b);
+void	ss(t_list **stack_a, t_list **stack_b);
 
 // push.c
 void	push(t_list **dest, t_list **src);

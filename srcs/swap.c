@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 18:37:39 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/03 19:37:01 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/04 21:07:33 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,21 @@ void	swap(t_list **list)
 	(*list)->prev = NULL;
 }
 
-void	sa(t_list *stack_a)
+void	sa(t_list **stack_a)
 {
-	swap(&stack_a);
+	swap(stack_a);
 	ft_printf("sa\n");
 }
 
-void	sb(t_list *stack_b)
+void	sb(t_list **stack_b)
 {
-	swap(&stack_b);
+	swap(stack_b);
 	ft_printf("sb\n");
 }
 
-void	ss(t_list *stack_a, t_list *stack_b)
+void	ss(t_list **stack_a, t_list **stack_b)
 {
-	swap(&stack_a);
-	swap(&stack_b);
+	swap(stack_a);
+	swap(stack_b);
 	ft_printf("ss\n");
 }
