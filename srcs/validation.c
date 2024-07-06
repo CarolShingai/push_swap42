@@ -6,13 +6,13 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 17:38:13 by cshingai          #+#    #+#             */
-/*   Updated: 2024/06/27 17:10:40 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/05 16:55:21 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	check_args_num(char *str)
+t_bool	check_args_num(char *str)
 {
 	int	idx;
 
@@ -22,37 +22,34 @@ int	check_args_num(char *str)
 	while (str[idx])
 	{
 		if (!ft_isdigit(str[idx]))
-			return (0);
+			return (FALSE);
 		idx++;
 	}
-	return (1);
+	return (TRUE);
 }
 
-int	check_max_min_value(char *str)
+t_bool	check_max_min_value(char *str)
 {
 	long	number;
 
 	number = ft_atoi(str);
 	if (number > INT_MAX || number < INT_MIN)
-		return (0);
-	return (1);
+		return (FALSE);
+	return (TRUE);
 }
 
-int	check_doubles(long nbr, char **str, int idx)
+t_bool	check_doubles(long nbr, char **str, int idx)
 {
 	idx++;
 	while (str[idx])
 	{
-		// ft_printf("1nbr:%d str[%d]:%d\n", nbr, idx, ft_atoi(str[idx]));
 		if (nbr == ft_atoi(str[idx]))
-		{
-			// ft_printf("2nbr:%d str[%d]:%d\n", nbr, idx, ft_atoi(str[idx]));
-			return (0);
-		}
+			return (FALSE);
 		idx++;
 	}
-	return (1);
+	return (TRUE);
 }
+
 // tratar casos com split
 t_bool	check_args(int argc, char **argv)
 {

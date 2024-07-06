@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 17:05:35 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/04 21:08:27 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/06 18:36:23 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	main(int argc, char **argv)
 	if (is_ordened(stack_a) == FALSE)
 		sort_three(&stack_a);
 	apagar_printlist(stack_a, 'a');
+	ft_printf("%d", get_price(stack_a));
 	// apagar_printlist(stack_b, 'b');
 	return (0);
 }

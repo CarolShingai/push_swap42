@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 16:49:38 by cshingai          #+#    #+#             */
-/*   Updated: 2024/06/26 19:36:40 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/05 16:53:03 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,14 @@ void	push(t_list **dest, t_list **src)
 	*dest = new_node;
 }
 
+//from b to a
 void	pa(t_list **dest, t_list **src)
 {
 	push(dest, src);
 	ft_printf("pa\n");
 }
 
+//from a to b
 void	pb(t_list **dest, t_list **src)
 {
 	push(src, dest);

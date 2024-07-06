@@ -6,7 +6,7 @@
 #    By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/07 14:43:10 by cshingai          #+#    #+#              #
-#    Updated: 2024/07/02 16:38:20 by cshingai         ###   ########.fr        #
+#    Updated: 2024/07/06 18:04:43 by cshingai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SRCS = ${addprefix srcs/, \
 			rotate.c \
 			reverse_rotate.c \
 			sort.c \
+			price.c \
 		}
 
 OBJ = $(SRCS:srcs/%.c=obj/%.o)

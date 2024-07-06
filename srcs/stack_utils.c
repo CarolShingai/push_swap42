@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 19:58:10 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/03 19:11:27 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/06 18:11:21 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	init_stack(t_list **stack, int argc, char **argv)
 	}
 	find_smallest_node(stack);
 	find_biggest_node(stack);
+	(*stack)->size = stack_size(*stack);
 }
 
 void	add_node(t_list **stack, int nbr)
@@ -49,7 +50,6 @@ void	add_node(t_list **stack, int nbr)
 		aux->next = node;
 		node->prev = aux;
 	}
-	(*stack)->size += 1;
 	ft_printf("size:%d\n", (*stack)->size);
 }
 
@@ -61,9 +61,9 @@ void	find_biggest_node(t_list **stack)
 		return ;
 	(*stack)->biggest = *stack;
 	temp = (*stack)->next;
-	while(temp)
+	while (temp)
 	{
-		if((*stack)->biggest->value < temp->value)
+		if ((*stack)->biggest->value < temp->value)
 			(*stack)->biggest = temp;
 		temp = temp->next;
 	}
@@ -77,10 +77,25 @@ void	find_smallest_node(t_list **stack)
 		return ;
 	(*stack)->smallest = *stack;
 	temp = (*stack)->next;
-	while(temp)
+	while (temp)
 	{
-		if((*stack)->smallest->value > temp->value)
+		if ((*stack)->smallest->value > temp->value)
 			(*stack)->smallest = temp;
 		temp = temp->next;
 	}
+}
+
+int	stack_size(t_list *stack)
+{
+	int	count;
+
+	if (stack == NULL)
+		return (0);
+	count = 0;
+	while (stack)
+	{
+		count++;
+		stack =  stack->next;
+	}
+	return(count);
 }
