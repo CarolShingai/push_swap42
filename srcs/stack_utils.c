@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 19:58:10 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/06 18:11:21 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/12 16:31:34 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ void	add_node(t_list **stack, int nbr)
 		aux->next = node;
 		node->prev = aux;
 	}
-	ft_printf("size:%d\n", (*stack)->size);
 }
 
 void	find_biggest_node(t_list **stack)

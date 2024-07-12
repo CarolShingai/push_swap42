@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 14:43:03 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/06 18:32:48 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/12 16:35:23 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ typedef struct s_list
 }					t_list;
 
 // price.c
-int	get_price(t_list *stack);
+int	get_price(t_list **stack);
 int	calc_price(t_list *stack);
 int	which_half(t_list *stack, int mov);
 int	superior(t_list *stack, int mov);
