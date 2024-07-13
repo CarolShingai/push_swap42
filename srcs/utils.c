@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 17:01:10 by cshingai          #+#    #+#             */
-/*   Updated: 2024/06/27 17:01:11 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/12 20:44:29 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,21 @@ void	*ft_free_split(char **split)
 	}
 	free(split);
 	return (NULL);
+}
+
+t_bool	is_ordened(t_node *stack)
+{
+	t_node *temp;
+
+	if (stack->size == 1)
+		return TRUE;
+	temp = stack->next;
+	while (stack && temp)
+	{
+		if (stack->value > temp->value)
+			return FALSE;
+		temp = temp->next;
+		stack = stack->next;
+	}
+	return TRUE;
 }

@@ -6,15 +6,16 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 19:58:10 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/12 16:31:34 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/12 20:59:06 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	init_stack(t_list **stack, int argc, char **argv)
+void	init_stack(t_node **stack, int argc, char **argv)
 {
 	int	idx;
+	t_info	info;
 
 	idx = 0;
 	if (check_args(argc, argv) == TRUE)
@@ -24,15 +25,15 @@ void	init_stack(t_list **stack, int argc, char **argv)
 	}
 	find_smallest_node(stack);
 	find_biggest_node(stack);
-	(*stack)->size = stack_size(*stack);
+	info.size = stack_size(*stack);
 }
 
-void	add_node(t_list **stack, int nbr)
+void	add_node(t_node **stack, int nbr)
 {
-	t_list	*node;
-	t_list	*aux;
+	t_node	*node;
+	t_node	*aux;
 
-	node = malloc(sizeof (t_list));
+	node = malloc(sizeof (t_node));
 	if (!node)
 		return ;
 	node->value = nbr;
@@ -52,9 +53,9 @@ void	add_node(t_list **stack, int nbr)
 	}
 }
 
-void	find_biggest_node(t_list **stack)
+void	find_biggest_node(t_node **stack)
 {
-	t_list	*temp;
+	t_node	*temp;
 
 	if (*stack == NULL && (*stack)->next == NULL)
 		return ;
@@ -68,9 +69,9 @@ void	find_biggest_node(t_list **stack)
 	}
 }
 
-void	find_smallest_node(t_list **stack)
+void	find_smallest_node(t_node **stack)
 {
-	t_list	*temp;
+	t_node	*temp;
 
 	if (*stack == NULL && (*stack)->next == NULL)
 		return ;
@@ -84,7 +85,7 @@ void	find_smallest_node(t_list **stack)
 	}
 }
 
-int	stack_size(t_list *stack)
+int	stack_size(t_node *stack)
 {
 	int	count;
 
@@ -96,5 +97,5 @@ int	stack_size(t_list *stack)
 		count++;
 		stack =  stack->next;
 	}
-	return(count);
+	return (count);
 }
