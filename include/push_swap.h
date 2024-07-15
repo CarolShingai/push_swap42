@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 14:43:03 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/12 20:58:11 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/15 03:04:34 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,19 @@ typedef struct s_node
 	struct s_node	*prev;
 }					t_node;
 
-typedef struct s_info
+typedef struct s_stack
 {
-	int				size;
-	t_node			**stack_a;
-	t_node			**stack_b;
-}					t_info;
+	int				size_a;
+	int				size_b;
+	t_node			*stack_a;
+	t_node			*stack_b;
+}					t_stack;
+
+/*Here I create the list, putting each element from argv, after using Atoi, in a node*/
+// build_list.c
+t_node    *build_list(int argc, char **argv);
+void	add_node(t_node **stack, int nbr);
+
 
 // price.c
 void	get_price(t_node **stack_a, t_node **stack_b);
@@ -79,8 +86,7 @@ void	rrb(t_node **stack_b);
 void	rrr(t_node **stack_a, t_node **stack_b);
 
 // stack_utils.c
-void	init_stack(t_node **stack, int argc, char **argv);
-void	add_node(t_node **stack, int nbr);
+t_stack	*init_stack(t_node *list_a, t_node *list_b);
 void	find_smallest_node(t_node **stack);
 void	find_biggest_node(t_node **stack);
 int		stack_size(t_node *stack);

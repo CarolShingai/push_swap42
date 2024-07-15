@@ -3,54 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 19:58:10 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/12 20:59:06 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/15 10:22:06 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	init_stack(t_node **stack, int argc, char **argv)
+t_stack	*init_stack(t_node *list_a, t_node *list_b)
 {
-	int	idx;
-	t_info	info;
+	t_stack *stack;
 
-	idx = 0;
-	if (check_args(argc, argv) == TRUE)
-	{
-		while (++idx < argc)
-			add_node(stack, ft_atoi(argv[idx]));
-	}
-	find_smallest_node(stack);
-	find_biggest_node(stack);
-	info.size = stack_size(*stack);
-}
+	stack->stack_a = list_a;
+	stack->stack_b = list_b;
 
-void	add_node(t_node **stack, int nbr)
-{
-	t_node	*node;
-	t_node	*aux;
-
-	node = malloc(sizeof (t_node));
-	if (!node)
-		return ;
-	node->value = nbr;
-	node->next = NULL;
-	if (*stack == NULL)
-	{
-		*stack = node;
-		node->prev = NULL;
-	}
-	else
-	{
-		aux = *stack;
-		while (aux->next)
-			aux = aux->next;
-		aux->next = node;
-		node->prev = aux;
-	}
+	stack->size_a = stack_size(stack->size_a);
+	stack->size_b = stack_size(stack->stack_b);
+	// info.size = stack_size(*stack);
 }
 
 void	find_biggest_node(t_node **stack)

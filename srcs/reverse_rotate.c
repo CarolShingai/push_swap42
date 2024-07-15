@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 17:12:59 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/12 20:55:55 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/15 03:03:16 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	reverse_rotate(t_list **stack)
+void	reverse_rotate(t_node **stack)
 {
-	t_list	*new_head;
+	t_node	*new_head;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
@@ -28,19 +28,19 @@ void	reverse_rotate(t_list **stack)
 	(*stack)->next->prev = *stack;
 }
 
-void	rra(t_list **stack_a)
+void	rra(t_node **stack_a)
 {
 	reverse_rotate(stack_a);
 	ft_printf("rra\n");
 }
 
-void	rrb(t_list **stack_b)
+void	rrb(t_node **stack_b)
 {
 	reverse_rotate(stack_b);
 	ft_printf("rrb\n");
 }
 
-void	rrr(t_list **stack_a, t_list **stack_b)
+void	rrr(t_node **stack_a, t_node **stack_b)
 {
 	reverse_rotate(stack_a);
 	reverse_rotate(stack_b);

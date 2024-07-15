@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 17:05:35 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/12 20:48:52 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/15 03:11:25 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ void	apagar_printlist(t_node *node, char c)
 
 int	main(int argc, char **argv)
 {
-	t_node	*stack_a;
-	t_node	*stack_b;
+	t_node	*list;
+	t_stack	*stacks;
 
-	stack_a = NULL;
-	stack_b = NULL;
-	init_stack(&stack_a, argc, argv);
-	if (is_ordened(stack_a) == FALSE)
-		sort(&stack_a, &stack_b);
+	if (check_args(argc, argv) == TRUE)
+		list = build_list(argc, argv);
+	stacks = init_stack(list, NULL);
+	if (is_ordened(list) == FALSE)
+		sort(stacks->stack_a, stacks->stack_b);
 	apagar_printlist(stack_a, 'a');
 	ft_printf("%d",stack_b->price );
 	// apagar_printlist(stack_b, 'b');
