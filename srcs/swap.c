@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 18:37:39 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/12 20:44:53 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/15 16:38:37 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	swap(t_node **list)
 {
-	if (*list == NULL || (*list)->size == 1)
+	if (*list == NULL || (*list)->next == NULL)
 		return ;
 	(*list) = (*list)->next;
 	(*list)->prev->next = (*list)->next;

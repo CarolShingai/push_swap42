@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
+/*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 14:43:03 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/15 03:04:34 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/15 17:19:02 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,24 +43,27 @@ typedef struct s_stack
 {
 	int				size_a;
 	int				size_b;
+	t_node			*target_a;
+	t_node			*target_b;
 	t_node			*stack_a;
 	t_node			*stack_b;
 }					t_stack;
 
 /*Here I create the list, putting each element from argv, after using Atoi, in a node*/
+
 // build_list.c
-t_node    *build_list(int argc, char **argv);
+t_node	*build_list(int argc, char **argv);
 void	add_node(t_node **stack, int nbr);
 
 
 // price.c
-void	get_price(t_node **stack_a, t_node **stack_b);
+void	get_price(t_stack *stack_a);
 void	set_positian(t_node **stack);
 
 // utils.c
 void	ft_error(char *msg);
 void	*ft_free_split(char **split);
-t_bool	is_ordened(t_node *stack_a);
+t_bool	is_ordened(t_node *stack);
 
 //swap.c
 void	swap(t_node **list);
@@ -93,7 +96,7 @@ int		stack_size(t_node *stack);
 
 //sort.c
 void	sort_three(t_node **stack);
-void	sort(t_node **stack, t_node **stack_b);
+void	sort(t_stack *stack_a);
 
 // validation.c
 t_bool	check_args_num(char *str);

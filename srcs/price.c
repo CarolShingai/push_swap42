@@ -6,44 +6,47 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 15:16:36 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/12 20:44:32 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/15 17:50:23 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	get_price(t_node **stack_a, t_node **stack_b)
+void	get_price(t_stack *stack)
 {
 	int	stack_len;
-	int	stack_half;
+	int	stack_half_b;
 
-	stack_half = stack_size(*stack_b) / 2;
-	stack_len = (*stack_b)->size;
-	set_positian(stack_a);
-	set_positian(stack_b);
-	(*stack_b)->price = (*stack_b)->position;
-	while(*stack_b)
+	stack_len = 0;
+	stack_half_b = stack_size(stack->stack_b) / 2;
+	set_positian(&stack->stack_a);
+	set_positian(&stack->stack_b);
+	stack->stack_b->price = stack->stack_b->position;
+	while(stack->stack_b)
 	{
-		if ((*stack_b)->position <= stack_half)
+		if ((stack->stack_b)->position <= stack_half_b)
 		{
-			(*stack_b)->half_superior = TRUE;
-			(*stack_b)->price = (*stack_b)->position;
+			(stack->stack_b)->half_superior = TRUE;
+			(stack->stack_b)->price = (stack->stack_b)->position;
 		}
-		else if ((*stack_b)->position > stack_half)
+		else if ((stack->stack_b)->position > stack_half_b)
 		{
-			(*stack_b)->half_superior = FALSE;
-			(*stack_b)->price = stack_len - (*stack_b)->position;
+			(stack->stack_b)->half_superior = FALSE;
+			(stack->stack_b)->price = stack_len - (stack->stack_b)->position;
 		}
-		*stack_b = (*stack_b)->next;
+		stack->stack_b = stack->stack_b->next;
 	}
 }
 
 void	set_positian(t_node **stack)
 {
+	t_node	*temp;
+
 	(*stack)->position = -1;
-	while (*stack)
+	temp = *stack;
+	while (temp)
 	{
-		(*stack)->position++;
-		(*stack) = (*stack)->next;
+		temp->position++;
+		temp = temp->next;
 	}
 }

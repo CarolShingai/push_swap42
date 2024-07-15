@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   build_list.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
+/*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 00:06:44 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/15 10:21:46 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/15 17:51:55 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,14 @@ t_node    *build_list(int argc, char **argv)
     t_node *list;
 
 	idx = 0;
-
-	while (++idx < argc)
-		add_node(&list, ft_atoi(argv[idx]));
-    find_smallest_node(list);
-	find_biggest_node(list);
+	list = NULL;
+	if (check_args(argc, argv) == TRUE)
+	{
+		while (++idx < argc)
+			add_node(&list, ft_atoi(argv[idx]));
+	}
+    find_smallest_node(&list);
+	find_biggest_node(&list);
     return(list);
 }
 

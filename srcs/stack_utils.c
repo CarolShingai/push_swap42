@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
+/*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 19:58:10 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/15 10:22:06 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/15 16:39:59 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 t_stack	*init_stack(t_node *list_a, t_node *list_b)
 {
-	t_stack *stack;
+	t_stack	*stack;
 
+	stack = malloc(sizeof(t_stack));
 	stack->stack_a = list_a;
 	stack->stack_b = list_b;
 
-	stack->size_a = stack_size(stack->size_a);
+	stack->size_a = stack_size(stack->stack_a);
 	stack->size_b = stack_size(stack->stack_b);
+	return (stack);
 	// info.size = stack_size(*stack);
 }
 
