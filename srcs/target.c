@@ -1,48 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   target.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/27 17:01:10 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/15 16:45:50 by cshingai         ###   ########.fr       */
+/*   Created: 2024/07/16 16:56:21 by cshingai          #+#    #+#             */
+/*   Updated: 2024/07/16 20:51:29 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ft_error(char *msg)
+t_node	*get_target_in_a(t_stack *stack)
 {
-	ft_printf("%s", msg);
-	exit(0);
-}
+	t_node	*temp;
+	t_node	*target;
+	int		current_value;
 
-void	*ft_free_split(char **split)
-{
-	int	idx;
-
-	idx = 0;
-	while (split[idx])
+	if (stack->stack_b == NULL)
+		stack->target_a = NULL;
+	temp = stack->stack_a;
+	target = temp;
+	current_value = stack->stack_a->value;
+	while (temp)
 	{
-		free(&split[idx]);
-		idx++;
-	}
-	free(split);
-	return (NULL);
-}
-
-t_bool	is_ordened(t_node *stack_a)
-{
-	t_node *temp;
-
-	temp = stack_a->next;
-	while (stack_a && temp)
-	{
-		if (stack_a->value > temp->value)
-			return FALSE;
+		if (stack->stack_b->value < temp->value)
+		{
+			current_value = temp->value;
+			if (current_value < target->value
+				|| stack->stack_b->value > target->value)
+				target = temp;
+		}
 		temp = temp->next;
-		stack_a = stack_a->next;
 	}
-	return TRUE;
+	return(target);
 }

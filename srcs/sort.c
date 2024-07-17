@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 15:43:45 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/12 20:44:27 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/16 19:57:46 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,17 +45,18 @@ void	sort_three(t_node **stack)
 // 	}
 // }
 
-void	sort(t_node **stack_a, t_node **stack_b)
+void	sort(t_stack *stack)
 {
-	if ((*stack_a)->size == 3)
-		sort_three(stack_a);
+	if (stack->size_a == 3)
+		sort_three(&stack->stack_a);
 	else
 	{
-		while((*stack_a)->size > 3)
+		while(stack->size_a > 3)
 		{
-			pb(stack_a, stack_b);
-			(*stack_a)->size--;
+			pb(&stack->stack_a, &stack->stack_b);
+			stack->size_a--;
 		}
-		get_price(stack_a, stack_b);
+		sort_three(&stack->stack_a);
+		put_price(stack);
 	}
 }
