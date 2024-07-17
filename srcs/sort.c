@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 15:43:45 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/15 17:07:34 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/16 19:57:46 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,6 @@ void	sort(t_stack *stack)
 			stack->size_a--;
 		}
 		sort_three(&stack->stack_a);
-		get_price(stack);
+		put_price(stack);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 14:43:03 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/16 18:55:24 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/16 20:44:27 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,10 @@ t_node	*build_list(int argc, char **argv);
 void	add_node(t_node **stack, int nbr);
 
 // price.c
-void	get_price(t_stack *stack_a);
+void	put_price(t_stack *stack);
+void	put_price_in_b(t_stack *stack, int half_b);
+void	put_price_in_a(t_stack *stack, int half_a);
 void	set_positian(t_node **stack);
-
-// utils.c
-void	ft_error(char *msg);
-void	*ft_free_split(char **split);
-t_bool	is_ordened(t_node *stack);
 
 //swap.c
 void	swap(t_node **list);
@@ -98,7 +95,12 @@ void	sort_three(t_node **stack);
 void	sort(t_stack *stack_a);
 
 // target.c
-void	get_target(t_stack *stack);
+t_node	*get_target_in_a(t_stack *stack);
+
+// utils.c
+void	ft_error(char *msg);
+void	*ft_free_split(char **split);
+t_bool	is_ordened(t_node *stack);
 
 // validation.c
 t_bool	check_args_num(char *str);

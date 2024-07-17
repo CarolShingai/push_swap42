@@ -6,35 +6,68 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 15:16:36 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/15 17:50:23 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/16 21:02:34 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	get_price(t_stack *stack)
+void	put_price(t_stack *stack)
 {
-	int	stack_len;
-	int	stack_half_b;
+	int	half_a;
+	int	half_b;
 
-	stack_len = 0;
-	stack_half_b = stack_size(stack->stack_b) / 2;
+	half_a = stack->size_a / 2;
+	half_b = stack_size(stack->stack_b) / 2;
+	stack->target_a = get_target_in_a(stack);
 	set_positian(&stack->stack_a);
 	set_positian(&stack->stack_b);
-	stack->stack_b->price = stack->stack_b->position;
-	while(stack->stack_b)
+	put_price_in_a(stack, half_a);
+	put_price_in_b(stack, half_b);
+}
+
+void	put_price_in_b(t_stack *stack, int half_b)
+{
+	t_node	*temp;
+
+	temp = stack->stack_b;
+	temp->price = temp->position;
+	while(temp)
 	{
-		if ((stack->stack_b)->position <= stack_half_b)
+		if ((temp)->position <= half_b)
 		{
-			(stack->stack_b)->half_superior = TRUE;
-			(stack->stack_b)->price = (stack->stack_b)->position;
+			(temp)->half_superior = TRUE;
+			(temp)->price = (temp)->position;
 		}
-		else if ((stack->stack_b)->position > stack_half_b)
+		else if ((temp)->position > half_b)
 		{
-			(stack->stack_b)->half_superior = FALSE;
-			(stack->stack_b)->price = stack_len - (stack->stack_b)->position;
+			(temp)->half_superior = FALSE;
+			(temp)->price = stack->size_b - (temp)->position;
 		}
-		stack->stack_b = stack->stack_b->next;
+		temp->price += stack->target_a->price;
+		temp = temp->next;
+	}
+}
+
+void	put_price_in_a(t_stack *stack, int half_a)
+{
+	t_node	*temp;
+
+	temp = stack->stack_a;
+	temp->price = temp->position;
+	while(temp)
+	{
+		if ((temp)->position <= half_a)
+		{
+			temp->half_superior = TRUE;
+			temp->price = (temp)->position;
+		}
+		else if (temp->position > half_a)
+		{
+			temp->half_superior = FALSE;
+			temp->price = stack->size_a - (temp)->position;
+		}
+		temp = temp->next;
 	}
 }
 
