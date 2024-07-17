@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 15:43:45 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/17 13:47:54 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/17 13:56:32 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,27 +23,6 @@ void	sort_three(t_node **stack)
 	if ((*stack)->value > (*stack)->next->value)
 		sa(stack);
 }
-
-// void	sort_five(t_list **stack_a, t_list **stack_b)
-// {
-// 	if ((*stack_a)->size > 3)
-// 	{
-// 		pb(stack_b, stack_a);
-// 		pb(stack_b, stack_a);
-// 		sort_three(stack_a);
-// 		if ((*stack_b)->value == (*stack_a)->biggest->value)
-// 		{
-// 			pa(stack_a, stack_b);
-// 			ra(stack_a);
-// 		}
-// 		else if ((*stack_b)->value == (*stack_a)->smallest->value)
-// 			pa(stack_a, stack_b);
-// 		else
-// 		{
-// 			find_smallest_node(stack_b);
-// 		}
-// 	}
-// }
 
 void	sort(t_stack *stack)
 {

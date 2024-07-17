@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 19:58:10 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/17 13:54:59 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/17 13:58:16 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ t_stack	*init_stack(t_node *list_a, t_node *list_b)
 
 void	find_biggest_node(t_node **stack)
 {
+//problemas
 	t_node	*temp;
 
 	if (*stack == NULL && (*stack)->next == NULL)
@@ -43,6 +44,7 @@ void	find_biggest_node(t_node **stack)
 
 void	find_smallest_node(t_node **stack)
 {
+//problemas
 	t_node	*temp;
 
 	if (*stack == NULL && (*stack)->next == NULL)

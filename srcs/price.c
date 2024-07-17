@@ -6,13 +6,12 @@
 /*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 15:16:36 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/17 13:44:25 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/17 13:57:11 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-//recalcular tamanho da stack
 void	put_price(t_stack *stack)
 {
 	int	half_a;
