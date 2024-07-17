@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 19:58:10 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/15 16:39:59 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/17 13:54:59 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ t_stack	*init_stack(t_node *list_a, t_node *list_b)
 	stack->size_a = stack_size(stack->stack_a);
 	stack->size_b = stack_size(stack->stack_b);
 	return (stack);
-	// info.size = stack_size(*stack);
 }
 
 void	find_biggest_node(t_node **stack)
@@ -36,8 +35,8 @@ void	find_biggest_node(t_node **stack)
 	temp = (*stack)->next;
 	while (temp)
 	{
-		if ((*stack)->biggest->value < temp->value)
-			(*stack)->biggest = temp;
+		if ((temp)->biggest->value < temp->value)
+			(temp)->biggest = temp;
 		temp = temp->next;
 	}
 }
@@ -52,8 +51,8 @@ void	find_smallest_node(t_node **stack)
 	temp = (*stack)->next;
 	while (temp)
 	{
-		if ((*stack)->smallest->value > temp->value)
-			(*stack)->smallest = temp;
+		if ((temp)->smallest->value > temp->value)
+			(temp)->smallest = temp;
 		temp = temp->next;
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 14:43:03 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/16 20:44:27 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/17 13:21:31 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ void	add_node(t_node **stack, int nbr);
 void	put_price(t_stack *stack);
 void	put_price_in_b(t_stack *stack, int half_b);
 void	put_price_in_a(t_stack *stack, int half_a);
-void	set_positian(t_node **stack);
+void	set_positian_a(t_stack *stack, t_node *list);
+void	set_positian_b(t_stack *stack, t_node *list);
 
 //swap.c
 void	swap(t_node **list);
