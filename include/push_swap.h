@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 14:43:03 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/17 13:21:31 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/21 22:34:07 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,8 @@ typedef struct s_node
 	int				position;
 	int				price;
 	t_bool			half_superior;
-	struct s_node	*biggest;
+	struct s_node	*target;
 	struct s_node	*cheapest;
-	struct s_node	*smallest;
 	struct s_node	*next;
 	struct s_node	*prev;
 }					t_node;
@@ -43,6 +42,8 @@ typedef struct s_stack
 {
 	int				size_a;
 	int				size_b;
+	t_node			*biggest;
+	t_node 			*smallest;
 	t_node			*target_a;
 	t_node			*target_b;
 	t_node			*stack_a;
@@ -87,12 +88,12 @@ void	rrr(t_node **stack_a, t_node **stack_b);
 
 // stack_utils.c
 t_stack	*init_stack(t_node *list_a, t_node *list_b);
-void	find_smallest_node(t_node **stack);
-void	find_biggest_node(t_node **stack);
+void	find_smallest_node(t_stack **stack);
+void	find_biggest_node(t_stack **stack);
 int		stack_size(t_node *stack);
 
 //sort.c
-void	sort_three(t_node **stack);
+void	sort_three(t_node **list_a, t_stack *stack);
 void	sort(t_stack *stack_a);
 
 // target.c

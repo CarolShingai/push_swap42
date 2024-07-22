@@ -3,14 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   target.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 16:56:21 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/16 20:51:29 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/21 22:39:34 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+// posso pegar o target do no cheapest
+// o no de b nao altera
 
 t_node	*get_target_in_a(t_stack *stack)
 {
@@ -34,5 +37,6 @@ t_node	*get_target_in_a(t_stack *stack)
 		}
 		temp = temp->next;
 	}
+	stack->stack_b->target = target;
 	return(target);
 }

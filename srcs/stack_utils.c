@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 19:58:10 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/17 13:58:16 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/21 20:33:37 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,39 +22,39 @@ t_stack	*init_stack(t_node *list_a, t_node *list_b)
 
 	stack->size_a = stack_size(stack->stack_a);
 	stack->size_b = stack_size(stack->stack_b);
+	find_biggest_node(&stack);
+	find_smallest_node(&stack);
 	return (stack);
 }
 
-void	find_biggest_node(t_node **stack)
+void	find_biggest_node(t_stack **stack)
 {
-//problemas
 	t_node	*temp;
 
-	if (*stack == NULL && (*stack)->next == NULL)
+	if ((*stack)->stack_a == NULL && (*stack)->stack_a->next == NULL)
 		return ;
-	(*stack)->biggest = *stack;
-	temp = (*stack)->next;
+	(*stack)->biggest = (*stack)->stack_a;
+	temp = (*stack)->stack_a;
 	while (temp)
 	{
-		if ((temp)->biggest->value < temp->value)
-			(temp)->biggest = temp;
+		if ((*stack)->biggest->value < temp->value)
+			(*stack)->biggest = temp;
 		temp = temp->next;
 	}
 }
 
-void	find_smallest_node(t_node **stack)
+void	find_smallest_node(t_stack **stack)
 {
-//problemas
 	t_node	*temp;
 
-	if (*stack == NULL && (*stack)->next == NULL)
+	if ((*stack)->stack_a == NULL && (*stack)->stack_a->next == NULL)
 		return ;
-	(*stack)->smallest = *stack;
-	temp = (*stack)->next;
+	(*stack)->smallest = (*stack)->stack_a;
+	temp = (*stack)->stack_a;
 	while (temp)
 	{
-		if ((temp)->smallest->value > temp->value)
-			(temp)->smallest = temp;
+		if ((*stack)->smallest->value > temp->value)
+			(*stack)->smallest = temp;
 		temp = temp->next;
 	}
 }
