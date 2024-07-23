@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   price.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
+/*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 15:16:36 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/17 13:57:11 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/22 20:46:06 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	put_price(t_stack *stack)
 
 	half_a = stack->size_a / 2;
 	half_b = stack_size(stack->stack_b) / 2;
-	stack->target_a = get_target_in_a(stack);
+	set_target_b(stack);
 	set_positian_a(stack, stack->stack_a);
 	set_positian_b(stack, stack->stack_b);
 	put_price_in_a(stack, half_a);
@@ -44,7 +44,7 @@ void	put_price_in_b(t_stack *stack, int half_b)
 			(temp)->half_superior = FALSE;
 			(temp)->price = stack->size_b - (temp)->position;
 		}
-		temp->price += stack->target_a->price;
+		temp->price += temp->target->price;
 		temp = temp->next;
 	}
 }
@@ -85,7 +85,7 @@ void	set_positian_a(t_stack *stack, t_node *list)
 		i++;
 	}
 }
-	
+
 void	set_positian_b(t_stack *stack, t_node *list)
 {
 	t_node	*temp;

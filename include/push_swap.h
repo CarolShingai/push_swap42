@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
+/*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 14:43:03 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/21 22:34:07 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/22 20:58:55 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,9 +95,13 @@ int		stack_size(t_node *stack);
 //sort.c
 void	sort_three(t_node **list_a, t_stack *stack);
 void	sort(t_stack *stack_a);
+void	sort_others(t_stack *stack);
+t_node	*get_cheapest_price(t_node *list_b);
+void	target_b_at_top(t_stack *stack, t_node *cheapest);
 
 // target.c
-t_node	*get_target_in_a(t_stack *stack);
+void	set_target_b(t_stack *stack);
+t_node	*get_target_in_a(t_stack *stack, t_node *node_b);
 
 // utils.c
 void	ft_error(char *msg);

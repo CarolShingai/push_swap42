@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 19:42:54 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/12 20:56:49 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/22 20:52:38 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	rb(t_node **stack_b)
 
 void	rr(t_node **stack_a, t_node **stack_b)
 {
-	ra(stack_a);
-	rb(stack_b);
+	rotate(stack_a);
+	rotate(stack_b);
 	ft_printf("ra\n");
 }
