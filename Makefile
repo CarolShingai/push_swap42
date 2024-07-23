@@ -6,7 +6,7 @@
 #    By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/07 14:43:10 by cshingai          #+#    #+#              #
-#    Updated: 2024/07/16 18:54:28 by cshingai         ###   ########.fr        #
+#    Updated: 2024/07/23 17:23:01 by cshingai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SRCS = ${addprefix srcs/, \
 			price.c \
 			build_list.c \
 			target.c \
+			target_top.c \
 		}
 
 OBJ = $(SRCS:srcs/%.c=obj/%.o)

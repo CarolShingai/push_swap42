@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 17:05:35 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/22 16:13:09 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/23 17:43:14 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,6 @@ int	main(int argc, char **argv)
 	stacks = init_stack(list, NULL);
 	if (is_ordened(stacks->stack_a) == FALSE)
 		sort(stacks);
-	// pb(&stacks->stack_a, &stacks->stack_b);
-	// pb(&stacks->stack_a, &stacks->stack_b);
 	apagar_printlist_a(stacks->stack_a);
 	apagar_printlist_b(stacks->stack_b);
 	// put_price(stacks);

@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 14:43:03 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/22 20:58:55 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/23 18:57:27 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,11 +97,18 @@ void	sort_three(t_node **list_a, t_stack *stack);
 void	sort(t_stack *stack_a);
 void	sort_others(t_stack *stack);
 t_node	*get_cheapest_price(t_node *list_b);
-void	target_b_at_top(t_stack *stack, t_node *cheapest);
+t_bool	is_target_top(t_stack *stack, t_node *cheapest);
 
 // target.c
 void	set_target_b(t_stack *stack);
 t_node	*get_target_in_a(t_stack *stack, t_node *node_b);
+
+// target_top.c
+void	target_at_top(t_stack *stack, t_node *cheapest);
+void	target_at_top_superior(t_stack **stack, t_node *cheapest);
+void	target_at_top_inferior(t_stack **stack, t_node *cheapest);
+void	target_a_at_top(t_stack **stack, t_node *cheapest);
+void	target_b_at_top(t_stack **stack, t_node *cheapest);
 
 // utils.c
 void	ft_error(char *msg);

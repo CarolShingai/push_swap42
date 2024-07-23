@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 15:43:45 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/22 20:58:29 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/23 18:12:44 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,27 +29,29 @@ void	sort(t_stack *stack)
 	if (stack->size_a == 3)
 		sort_three(&stack->stack_a, stack);
 	else
-	{
-		while(stack->size_a > 3)
-		{
-			pb(&stack->stack_a, &stack->stack_b);
-			stack->size_a = stack_size(stack->stack_a);
-			stack->size_b = stack_size(stack->stack_b);
-		}
-		sort_three(&stack->stack_a, stack);
-		sort_others(stack);
-	}
+		while(!is_ordened(stack->stack_a) && stack->stack_b != NULL);
+			sort_others(stack);
 }
 
 void	sort_others(t_stack *stack)
 {
 	t_node	*cheapest;
 
-	put_price(stack);
-	cheapest = get_cheapest_price(stack->stack_b);
-	stack->target_b = cheapest;
-	stack->target_a = cheapest->target;
-	target_b_at_top(stack, cheapest);
+	while(stack->size_a > 3)
+	{
+		pb(&stack->stack_a, &stack->stack_b);
+		stack->size_a = stack_size(stack->stack_a);
+		stack->size_b = stack_size(stack->stack_b);
+	}
+	while(!is_ordened(stack->stack_a) && stack->stack_b != NULL)
+	{
+		put_price(stack);
+		cheapest = get_cheapest_price(stack->stack_b);
+		stack->target_b = cheapest;
+		stack->target_a = cheapest->target;
+		target_at_top(stack, cheapest);
+		pa(&stack->stack_a, &stack->stack_b);
+	}
 }
 
 t_node	*get_cheapest_price(t_node *list_b)
@@ -68,16 +70,10 @@ t_node	*get_cheapest_price(t_node *list_b)
 	return (cheapest);
 }
 
-void	target_b_at_top(t_stack *stack, t_node *cheapest)
+t_bool	is_target_top(t_stack *stack, t_node *cheapest)
 {
-	t_node	*temp;
-
-	temp = stack->stack_b;
-	while(temp != cheapest)
-	{
-		if (cheapest->half_superior == TRUE)
-			rra(&stack->stack_b);
-		else
-			ra(&stack->stack_b);
-	}
+	if (stack->stack_a == cheapest->target && stack->stack_b == cheapest)
+		return (TRUE);
+	else
+		return (FALSE);
 }

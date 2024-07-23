@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 16:56:21 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/22 16:03:56 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/23 17:22:45 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,3 +49,5 @@ t_node	*get_target_in_a(t_stack *stack, t_node *node_b)
 	node_b->target = target;
 	return(target);
 }
+
+
