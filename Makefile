@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cshingai <cshingai>                        +#+  +:+       +#+         #
+#    By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/07 14:43:10 by cshingai          #+#    #+#              #
-#    Updated: 2024/07/25 12:34:32 by cshingai         ###   ########.fr        #
+#    Updated: 2024/07/25 16:40:17 by cshingai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SRCS = ${addprefix srcs/, \
 			target_top.c \
 			sort_other.c \
 			listening_command.c \
+			error.c \
 		}
 
 OBJ = $(SRCS:srcs/%.c=obj/%.o)

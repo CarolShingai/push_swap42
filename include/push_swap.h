@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
+/*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 14:43:03 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/25 13:53:27 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/25 16:45:23 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,11 @@ void	apagar_printlist_a(t_node *node);
 // build_list.c
 t_node	*build_list(int argc, char **argv);
 void	add_node(t_node **stack, int nbr);
+
+// error.c
+void	ft_error(char *msg);
+void	free_stack(t_node **stack);
+void	free_matrix(char **argv);
 
 // price.c
 void	put_price(t_stack *stack);
@@ -115,7 +120,6 @@ void	target_a_at_top(t_stack **stack, t_node *cheapest);
 void	target_b_at_top(t_stack **stack, t_node *cheapest);
 
 // utils.c
-void	ft_error(char *msg);
 void	*ft_free_split(char **split);
 t_bool	is_ordened(t_node *stack);
 

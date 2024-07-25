@@ -1,42 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/27 17:01:10 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/25 16:21:44 by cshingai         ###   ########.fr       */
+/*   Created: 2024/07/25 16:16:16 by cshingai          #+#    #+#             */
+/*   Updated: 2024/07/25 19:52:25 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	*ft_free_split(char **split)
+void	ft_error(char *msg)
 {
-	int	idx;
-
-	idx = 0;
-	while (split[idx])
-	{
-		free(&split[idx]);
-		idx++;
-	}
-	free(split);
-	return (NULL);
+	// free_matrix(argv);
+	ft_printf("%s", msg);
+	exit(0);
 }
 
-t_bool	is_ordened(t_node *stack_a)
+void	free_matrix(char **argv)
 {
-	t_node *temp;
+	int i = -1;
 
-	temp = stack_a->next;
-	while (stack_a && temp)
+	if (argv == NULL || *argv == NULL)
+		return ;
+	while(argv[++i])
+		free(argv[i]);
+}
+
+void	free_stack(t_node **stack)
+{
+	t_node	*tmp;
+	t_node	*current;
+
+	if (NULL == stack)
+		return ;
+	current = *stack;
+	while (current)
 	{
-		if (stack_a->value > temp->value)
-			return FALSE;
-		temp = temp->next;
-		stack_a = stack_a->next;
+		tmp = current->next;
+		free(current);
+		current = tmp;
 	}
-	return TRUE;
+	*stack = NULL;
 }

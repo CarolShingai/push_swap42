@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   target_top.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
+/*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 17:22:35 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/25 13:50:59 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/25 19:20:12 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,14 @@ void	target_at_top(t_stack *stack, t_node *cheapest)
 
 void	target_a_at_top(t_stack **stack, t_node *cheapest)
 {
-	if ((*stack)->stack_a != cheapest->target)
+	while ((*stack)->stack_a != cheapest->target)
 	{
-		while ((*stack)->stack_a != cheapest->target)
-		{
-			if ((*stack)->target_a->half_superior == TRUE)
-				rra(&(*stack)->stack_a);
-				// listen_command((void *)rra, stack);
-			else
-				ra(&(*stack)->stack_a);
-				// listen_command((void *)ra, stack);
-		}
+		if ((*stack)->target_a->half_superior == TRUE)
+			ra(&(*stack)->stack_a);
+			// listen_command((void *)rra, stack);
+		else
+			rra(&(*stack)->stack_a);
+			// listen_command((void *)ra, stack);
 	}
 }
 
@@ -41,9 +38,9 @@ void	target_b_at_top(t_stack **stack, t_node *cheapest)
 		while ((*stack)->stack_b != cheapest)
 		{
 			if ((*stack)->target_b->half_superior == TRUE)
-				rrb(&(*stack)->stack_b);
-			else
 				rb(&(*stack)->stack_b);
+			else
+				rrb(&(*stack)->stack_b);
 		}
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
+/*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 15:43:45 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/24 23:12:15 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/25 15:44:49 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,7 @@ void	sort(t_stack *stack)
 	if (stack->size_a == 3)
 		sort_three(&stack->stack_a, stack);
 	else
-	{
-		sort_others(stack);	
-	}
+		sort_others(stack);
 }
 
 t_node	*get_cheapest_price(t_node *list_b)

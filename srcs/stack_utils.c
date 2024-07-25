@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
+/*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 19:58:10 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/24 19:33:44 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/25 17:43:44 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ t_stack	*init_stack(t_node *list_a, t_node *list_b)
 	stack = malloc(sizeof(t_stack));
 	stack->stack_a = list_a;
 	stack->stack_b = list_b;
-
 	stack->size_a = stack_size(stack->stack_a);
 	stack->size_b = stack_size(stack->stack_b);
 	find_biggest_node(&stack);
@@ -76,9 +75,12 @@ int	stack_size(t_node *stack)
 
 t_node	*find_last_node(t_node *stack)
 {
+	t_node	*temp;
+
 	if (stack == NULL)
 		return (NULL);
-	while(stack)
-		stack = stack->next;
-	return(stack);
+	temp = stack;
+	while(temp->next)
+		temp = temp->next;
+	return(temp);
 }
