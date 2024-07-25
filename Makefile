@@ -6,7 +6,7 @@
 #    By: cshingai <cshingai>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/07 14:43:10 by cshingai          #+#    #+#              #
-#    Updated: 2024/07/24 14:51:39 by cshingai         ###   ########.fr        #
+#    Updated: 2024/07/25 12:34:32 by cshingai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ SRCS = ${addprefix srcs/, \
 			target.c \
 			target_top.c \
 			sort_other.c \
+			listening_command.c \
 		}
 
 OBJ = $(SRCS:srcs/%.c=obj/%.o)

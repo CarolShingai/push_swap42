@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 14:43:03 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/24 21:29:31 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/25 13:53:27 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 
 # define ERROR "Error\n"
 # define NO_ARGS ""
-
 
 typedef enum e_bool
 {
@@ -92,6 +91,7 @@ t_stack	*init_stack(t_node *list_a, t_node *list_b);
 void	find_smallest_node(t_stack **stack);
 void	find_biggest_node(t_stack **stack);
 int		stack_size(t_node *stack);
+t_node	*find_last_node(t_node *stack);
 
 //sort.c
 void	sort_three(t_node **list_a, t_stack *stack);
@@ -103,7 +103,7 @@ t_bool	is_target_top(t_stack *stack, t_node *cheapest);
 void	sort_others(t_stack *stack);
 void    orderedStackTransfer(t_stack *stack);
 void	smallest_direction(t_stack *stack);
-void	push_nodes(t_stack *stack);
+void	push_nodes(t_stack **stack);
 
 // target.c
 void	set_target_b(t_stack *stack);
@@ -111,8 +111,6 @@ t_node	*get_target_in_a(t_stack *stack, t_node *node_b);
 
 // target_top.c
 void	target_at_top(t_stack *stack, t_node *cheapest);
-void	target_at_top_superior(t_stack **stack, t_node *cheapest);
-void	target_at_top_inferior(t_stack **stack, t_node *cheapest);
 void	target_a_at_top(t_stack **stack, t_node *cheapest);
 void	target_b_at_top(t_stack **stack, t_node *cheapest);
 
@@ -126,5 +124,7 @@ t_bool	check_args_num(char *str);
 t_bool	check_max_min_value(char *str);
 t_bool	check_doubles(long nbr, char **str, int idx);
 t_bool	check_args(int argc, char **argv);
+
+void    listen_command(void (*f)(t_stack **), t_stack **stack);
 
 #endif

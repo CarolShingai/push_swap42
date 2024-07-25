@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 15:43:45 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/24 23:10:32 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/24 23:12:15 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ void	sort(t_stack *stack)
 		sort_three(&stack->stack_a, stack);
 	else
 	{
-		// while(!is_ordened(stack->stack_a))
-			sort_others(stack);	
+		sort_others(stack);	
 	}
 }
 
