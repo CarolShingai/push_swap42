@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 19:58:10 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/21 20:33:37 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/24 19:33:44 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,13 @@ int	stack_size(t_node *stack)
 		stack =  stack->next;
 	}
 	return (count);
+}
+
+t_node	*find_last_node(t_node *stack)
+{
+	if (stack == NULL)
+		return (NULL);
+	while(stack)
+		stack = stack->next;
+	return(stack);
 }

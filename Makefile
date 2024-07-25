@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+         #
+#    By: cshingai <cshingai>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/07 14:43:10 by cshingai          #+#    #+#              #
-#    Updated: 2024/07/23 17:23:01 by cshingai         ###   ########.fr        #
+#    Updated: 2024/07/24 14:51:39 by cshingai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ SRCS = ${addprefix srcs/, \
 			build_list.c \
 			target.c \
 			target_top.c \
+			sort_other.c \
 		}
 
 OBJ = $(SRCS:srcs/%.c=obj/%.o)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 14:43:03 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/23 18:57:27 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/24 21:29:31 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ typedef struct s_stack
 }					t_stack;
 
 /*Here I create the list, putting each element from argv, after using Atoi, in a node*/
+void	apagar_printlist_a(t_node *node);
 
 // build_list.c
 t_node	*build_list(int argc, char **argv);
@@ -95,9 +96,14 @@ int		stack_size(t_node *stack);
 //sort.c
 void	sort_three(t_node **list_a, t_stack *stack);
 void	sort(t_stack *stack_a);
-void	sort_others(t_stack *stack);
 t_node	*get_cheapest_price(t_node *list_b);
 t_bool	is_target_top(t_stack *stack, t_node *cheapest);
+
+// sort_other.c
+void	sort_others(t_stack *stack);
+void    orderedStackTransfer(t_stack *stack);
+void	smallest_direction(t_stack *stack);
+void	push_nodes(t_stack *stack);
 
 // target.c
 void	set_target_b(t_stack *stack);

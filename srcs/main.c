@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 17:05:35 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/23 17:43:14 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/24 00:24:37 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	main(int argc, char **argv)
 	apagar_printlist_a(stacks->stack_a);
 	apagar_printlist_b(stacks->stack_b);
 	// put_price(stacks);
-	ft_printf("price:%d\n", stacks->stack_b->price);
+	// ft_printf("price:%d\n", stacks->stack_b->price);
 	// ft_printf("target:%d", stacks->target_a->value);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 17:12:59 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/15 10:23:19 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/24 21:15:29 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,23 @@
 void	reverse_rotate(t_node **stack)
 {
 	t_node	*new_head;
+	t_node	*prev;
 
+	new_head = *stack;
+	prev = NULL;
 	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
-	new_head = *stack;
 	while (new_head->next)
+	{
+		prev = new_head;
 		new_head = new_head->next;
+	}
+	if (prev)
+		prev->next = NULL;
 	new_head->next = *stack;
-	new_head->prev->next = NULL;
 	new_head->prev = NULL;
+	(*stack)->prev = new_head;
 	*stack = new_head;
-	(*stack)->next->prev = *stack;
 }
 
 void	rra(t_node **stack_a)

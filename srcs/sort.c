@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cshingai <cshingai>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 15:43:45 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/23 18:12:44 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/24 23:10:32 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,28 +29,9 @@ void	sort(t_stack *stack)
 	if (stack->size_a == 3)
 		sort_three(&stack->stack_a, stack);
 	else
-		while(!is_ordened(stack->stack_a) && stack->stack_b != NULL);
-			sort_others(stack);
-}
-
-void	sort_others(t_stack *stack)
-{
-	t_node	*cheapest;
-
-	while(stack->size_a > 3)
 	{
-		pb(&stack->stack_a, &stack->stack_b);
-		stack->size_a = stack_size(stack->stack_a);
-		stack->size_b = stack_size(stack->stack_b);
-	}
-	while(!is_ordened(stack->stack_a) && stack->stack_b != NULL)
-	{
-		put_price(stack);
-		cheapest = get_cheapest_price(stack->stack_b);
-		stack->target_b = cheapest;
-		stack->target_a = cheapest->target;
-		target_at_top(stack, cheapest);
-		pa(&stack->stack_a, &stack->stack_b);
+		// while(!is_ordened(stack->stack_a))
+			sort_others(stack);	
 	}
 }
 
