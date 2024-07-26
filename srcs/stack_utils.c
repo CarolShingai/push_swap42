@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 19:58:10 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/25 17:43:44 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/25 20:04:53 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	stack_size(t_node *stack)
 	while (stack)
 	{
 		count++;
-		stack =  stack->next;
+		stack = stack->next;
 	}
 	return (count);
 }
@@ -80,7 +80,7 @@ t_node	*find_last_node(t_node *stack)
 	if (stack == NULL)
 		return (NULL);
 	temp = stack;
-	while(temp->next)
+	while (temp->next)
 		temp = temp->next;
-	return(temp);
+	return (temp);
 }

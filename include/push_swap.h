@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 14:43:03 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/25 16:45:23 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/25 20:14:19 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,18 @@ typedef struct s_node
 
 typedef struct s_stack
 {
-	int				size_a;
-	int				size_b;
-	t_node			*biggest;
-	t_node 			*smallest;
-	t_node			*target_a;
-	t_node			*target_b;
-	t_node			*stack_a;
-	t_node			*stack_b;
-}					t_stack;
+	int		size_a;
+	int		size_b;
+	t_node	*biggest;
+	t_node	*smallest;
+	t_node	*target_a;
+	t_node	*target_b;
+	t_node	*stack_a;
+	t_node	*stack_b;
+}			t_stack;
 
-/*Here I create the list, putting each element from argv, after using Atoi, in a node*/
+/*Here I create the list, putting each element from argv,
+after using Atoi, in a node*/
 void	apagar_printlist_a(t_node *node);
 
 // build_list.c
@@ -68,7 +69,7 @@ void	put_price_in_a(t_stack *stack, int half_a);
 void	set_positian_a(t_stack *stack, t_node *list);
 void	set_positian_b(t_stack *stack, t_node *list);
 
-//swap.c
+// swap.c
 void	swap(t_node **list);
 void	sa(t_node **stack_a);
 void	sb(t_node **stack_b);
@@ -98,7 +99,7 @@ void	find_biggest_node(t_stack **stack);
 int		stack_size(t_node *stack);
 t_node	*find_last_node(t_node *stack);
 
-//sort.c
+// sort.c
 void	sort_three(t_node **list_a, t_stack *stack);
 void	sort(t_stack *stack_a);
 t_node	*get_cheapest_price(t_node *list_b);
@@ -106,7 +107,7 @@ t_bool	is_target_top(t_stack *stack, t_node *cheapest);
 
 // sort_other.c
 void	sort_others(t_stack *stack);
-void    orderedStackTransfer(t_stack *stack);
+void	ordered_stack_transfer(t_stack *stack);
 void	smallest_direction(t_stack *stack);
 void	push_nodes(t_stack **stack);
 
@@ -128,7 +129,5 @@ t_bool	check_args_num(char *str);
 t_bool	check_max_min_value(char *str);
 t_bool	check_doubles(long nbr, char **str, int idx);
 t_bool	check_args(int argc, char **argv);
-
-void    listen_command(void (*f)(t_stack **), t_stack **stack);
 
 #endif

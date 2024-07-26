@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 16:16:16 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/25 19:52:25 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/25 20:01:57 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 void	ft_error(char *msg)
 {
-	// free_matrix(argv);
 	ft_printf("%s", msg);
 	exit(0);
 }
 
 void	free_matrix(char **argv)
 {
-	int i = -1;
+	int	i;
 
+	i = -1;
 	if (argv == NULL || *argv == NULL)
 		return ;
-	while(argv[++i])
+	while (argv[++i])
 		free(argv[i]);
 }
 

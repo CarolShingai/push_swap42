@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 00:06:44 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/25 16:40:00 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/25 20:11:35 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_node	*build_list(int argc, char **argv)
 {
-	int	idx;
-	t_node *list;
+	int		idx;
+	t_node	*list;
 
 	idx = 0;
 	list = NULL;
@@ -26,7 +26,7 @@ t_node	*build_list(int argc, char **argv)
 	}
 	else
 		free_stack(&list);
-	return(list);
+	return (list);
 }
 
 void	add_node(t_node **stack, int nbr)

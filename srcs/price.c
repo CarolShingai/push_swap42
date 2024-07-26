@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 15:16:36 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/22 20:46:06 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/25 20:04:26 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	put_price_in_b(t_stack *stack, int half_b)
 
 	temp = stack->stack_b;
 	temp->price = temp->position;
-	while(temp)
+	while (temp)
 	{
 		if ((temp)->position <= half_b)
 		{
@@ -55,7 +55,7 @@ void	put_price_in_a(t_stack *stack, int half_a)
 
 	temp = stack->stack_a;
 	temp->price = temp->position;
-	while(temp)
+	while (temp)
 	{
 		if ((temp)->position <= half_a)
 		{
@@ -74,7 +74,7 @@ void	put_price_in_a(t_stack *stack, int half_a)
 void	set_positian_a(t_stack *stack, t_node *list)
 {
 	t_node	*temp;
-	int 	i;
+	int		i;
 
 	i = 0;
 	temp = list;
@@ -89,7 +89,7 @@ void	set_positian_a(t_stack *stack, t_node *list)
 void	set_positian_b(t_stack *stack, t_node *list)
 {
 	t_node	*temp;
-	int 	i;
+	int		i;
 
 	i = 0;
 	temp = list;

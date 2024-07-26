@@ -6,7 +6,7 @@
 /*   By: cshingai <cshingai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 17:38:13 by cshingai          #+#    #+#             */
-/*   Updated: 2024/07/25 16:45:15 by cshingai         ###   ########.fr       */
+/*   Updated: 2024/07/25 20:27:08 by cshingai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ t_bool	check_args_num(char *str)
 	idx = 0;
 	if (str[idx] == '-' || str[idx] == '+')
 		idx++;
+	if (str[idx] == '\0')
+		return(FALSE);
 	while (str[idx])
 	{
 		if (!ft_isdigit(str[idx]))
